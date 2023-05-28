@@ -15,7 +15,7 @@ Using this Backend application, Tournament Management Persons can
 ## NOTE
 
 - deployed back end url "https://tournament-backend-e17h.onrender.com"
-- send all requests with headers, {logintoken : "demotoken" }\
+- send all requests with headers, {logintoken : "demotoken" }
 - for dates use GMT epoch of milliseconds
 
 ## End Point Queries
