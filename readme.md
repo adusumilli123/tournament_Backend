@@ -17,7 +17,7 @@ Using this Backend application, Tournament Management Persons can
 send all requests with headers, {logintoken : "demotoken" }\
 for dates use GMT epoch of milliseconds
 
-## End Point Quieries
+## End Point Queries
 
 - **Get All Tournaments**
 

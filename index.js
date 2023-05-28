@@ -16,6 +16,8 @@ console.log("mongo connected");
 app.listen(process.env.PORT, () =>
   console.log("app started on PORT", process.env.PORT)
 );
-
+app.get("/", function (request, response) {
+  response.send("welcome to Tournament API");
+});
 app.use("/tournaments", tournamentsRouter);
 app.use("/participants", participantsRouter);
