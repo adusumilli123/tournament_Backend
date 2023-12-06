@@ -10,11 +10,8 @@ const app = express();
 app.use(express.json());
 
 export var client = new MongoClient(process.env.MONGO_URL, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 try {
