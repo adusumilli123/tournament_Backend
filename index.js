@@ -1,4 +1,5 @@
 import express from "express";
+var cors = require('cors')
 import * as dotenv from "dotenv";
 import { MongoClient } from "mongodb";
 dotenv.config();
@@ -8,7 +9,7 @@ import participantsRouter from "./routes/participants.route.js";
 
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 export var client = new MongoClient(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
