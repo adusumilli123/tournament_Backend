@@ -27,7 +27,7 @@ try {
 }
 
 app.listen(process.env.PORT, () =>
-  console.log("app started on PORT", process.env.PORT)
+  console.log("app started on PORT", process.env.PORT || 3000)
 );
 app.get("/", function (request, response) {
   response.send(
