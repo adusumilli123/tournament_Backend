@@ -9,9 +9,22 @@ import participantsRouter from "./routes/participants.route.js";
 const app = express();
 app.use(express.json());
 
-export const client = new MongoClient(process.env.MONGO_URL);
-await client.connect();
-console.log("mongo connected");
+export var client = new MongoClient(process.env.MONGO_URL, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+try {
+  await client.connect();
+  console.log("mongo connected");
+} catch (error) {
+  console.error(error.message)
+} finally {
+  await client.close();
+}
 
 app.listen(process.env.PORT, () =>
   console.log("app started on PORT", process.env.PORT)
